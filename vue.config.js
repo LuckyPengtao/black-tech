@@ -3,8 +3,11 @@ function resolve(dir) {
     return path.join(__dirname, dir)
 }
 module.exports = {
+    publicPath: '/blacktech/',
+    outputDir: 'dist',
+    assetsDir: 'static',
     devServer: {
-        host: '172.16.168.111',
+        host: 'localhost',
         port: 80,
     },
     productionSourceMap: false,

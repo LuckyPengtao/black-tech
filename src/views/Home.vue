@@ -87,7 +87,7 @@
               <el-col :xs="24" :sm="24" :lg="8">
                 <div class="chart-wrapper">
                     <!--                  <el-image :src="require('@/assets/cloud.gif')"></el-image>-->
-                    <word-cloud/>
+                  <TagWord3d/>
 
                 </div>
               </el-col>
@@ -96,12 +96,56 @@
             <el-row :gutter="16" style="margin-top: 1%;height: 50%">
               <el-col :xs="24" :sm="24" :lg="15">
                 <div class="chart-wrapper">
-                  <bar-chart />
+                  <line-chart/>
                 </div>
               </el-col>
               <el-col :xs="24" :sm="24" :lg="9">
                 <div class="chart-wrapper">
-                  <b>分享榜前三</b>
+                  <b>智能能力</b>
+                  <el-tabs type="border-card" style="margin: 20px 8px">
+                    <el-tab-pane>
+                      <span slot="label"><i class="el-icon-view"></i>&nbsp;感知能力</span>
+                      <el-collapse v-model="activeNames" @change="handleChange">
+                        <el-collapse-item title="语音" name="1">
+                          <div><el-image :src="require('../assets/yinxun.png')" alt="音讯盒子"></el-image></div>
+                          <div><el-image :src="require('../assets/wave.png')"><h2 style="color: white">音讯盒子</h2></el-image></div>
+                        </el-collapse-item>
+                        <el-collapse-item title="图片" name="2">
+                          <div>技术研发中心：尉佳玮、靳博</div>
+                          <div>实现照片视频动作，文物唱歌，古人读诗等形式</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="视频" name="3">
+                          <div>技术研发中心：李泽魁、董瑞</div>
+                          <div>复现了stylegan2模型将现实人脸生成动画人脸的效果</div>
+                        </el-collapse-item>
+                      </el-collapse>
+                    </el-tab-pane>
+                    <el-tab-pane>
+                      <span slot="label"><i class="el-icon-s-opportunity"></i>&nbsp;认知能力</span>
+                      <el-collapse v-model="activeNames" @change="handleChange">
+                        <el-collapse-item title="自然语言处理" name="1">
+                          <div>技术研发中心：秦玉芳、罗延根 、尉佳玮 和靳博</div>
+                          <div>《用文本挖掘剖析54万首诗歌》的内容进行了分析和复现，其中罗延根使用392万行数据重新训练了GPT-2，可生成七言五言律诗绝句，对联，藏头诗</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="辅助写作" name="2">
+                          <div>技术研发中心：尉佳玮、靳博</div>
+                          <div>实现照片视频动作，文物唱歌，古人读诗等形式</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="内容校验" name="3">
+                          <div>技术研发中心：李泽魁、董瑞</div>
+                          <div>复现了stylegan2模型将现实人脸生成动画人脸的效果</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="机器人" name="4">
+                          <div>技术研发中心：李泽魁、董瑞</div>
+                          <div>复现了stylegan2模型将现实人脸生成动画人脸的效果</div>
+                        </el-collapse-item>
+                        <el-collapse-item title="其他" name="5">
+                          <div>技术研发中心：李泽魁、董瑞</div>
+                          <div>复现了stylegan2模型将现实人脸生成动画人脸的效果</div>
+                        </el-collapse-item>
+                      </el-collapse>
+                    </el-tab-pane>
+                  </el-tabs>
                 </div>
               </el-col>
             </el-row>
@@ -113,16 +157,24 @@
 
 <script>
 import BarChart from '../components/charts/BarChart'
-import BarChartD from "@/components/charts/BarChartD";
-import WordCloud from "@/components/charts/WordCloud";
-import Word from "@/components/charts/Word";
+import LineChart from "../components/charts/LineChart";
+import TagWord3d from "../components/charts/TagWord3d";
 export default {
   name: "Home",
   components: {
     BarChart,
-    BarChartD,
-    WordCloud,
-    Word
+    LineChart,
+    TagWord3d
+  },
+  data() {
+    return {
+      activeNames: []
+    };
+  },
+  methods: {
+    handleChange(val) {
+      console.log(val);
+    }
   }
 }
 </script>
@@ -153,7 +205,6 @@ export default {
   font-size: 30px;
   font-family: 华文行楷;
   color: #ffffff;
-  font-weight: 0.1;
 
 }
 

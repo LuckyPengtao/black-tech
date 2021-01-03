@@ -1,6 +1,6 @@
 <template>
-  <div class="tagcloud-all"
-       ref="tagcloudall">
+  <div class="tagCloud-all"
+       ref="tagCloud">
     <a v-for="item in tagList" :href="item.url" :style="'color:' + item.color + ';top: 0;left: 0;filter:none;'">{{item.name}}</a>
   </div>
 </template>
@@ -206,7 +206,7 @@ export default {
     // 生成标签云
     onReady() {
       this.$nextTick(() => {
-        this.oList = this.$refs.tagcloudall;
+        this.oList = this.$refs.tagCloud;
         this.oA = this.oList.getElementsByTagName('a')
         let oTag = null;
         for (let i = 0; i < this.oA.length; i++) {
@@ -247,7 +247,7 @@ export default {
 
 <style lang="scss" scoped>
 // 标签云
-.tagcloud-all {
+.tagCloud-all {
   position: relative;
 
   a {

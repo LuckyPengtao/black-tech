@@ -11,25 +11,31 @@ export default {
   methods: {
     init(){
       let tags = [
-        new Tag("JS-Cumulus", 100),
-        new Tag("WP-Cumulus", 80, "http://www.roytanck.com/2008/05/19/how-to-repurpose-my-tag-cloud-flash-movie/", true),
-        new Tag("Jeroen van Warmerdam", 60, "http://www.jeroenvanwarmerdam.nl"),
-        new Tag("Stratus", "http://student.agh.edu.pl/~fatyga/repos/stratus/example.php"),
-        new Tag("JavaScript", {
+        new Tag("5G消息", 42, {
+          color: 'orange'
+        }),
+        new Tag("修复", 12, "http://www.roytanck.com/2008/05/19/how-to-repurpose-my-tag-cloud-flash-movie/", true),
+        new Tag("图像", 17, {color: '#096'}),
+        new Tag("超分", 12),
+        new Tag("语音识别", 3,{
           color: "red"
         }),
-        new Tag("Object Oriented"),
-        new Tag("XB (Cross Browser)"),
-        new Tag("Firefox", 5),
-        new Tag("Chrome", 4),
-        new Tag("Safari", 3),
-        new Tag("Opera", 2),
-        new Tag("IE", 1),
-        new Tag("<del>No flash</del>"),
-        new Tag("<del>No JavaScript library</del>"),
-        new Tag("Tag"),
-        new Tag("Tag Cloud"),
-        new Tag("<img src='icon-tagcloud.gif' />")
+        new Tag("3D", 9, {color: 'yellow'}),
+        new Tag("AI", 66, {color: 'green'}),
+        new Tag("翻译", 8, {color: '#7e0023'}),
+        new Tag("智能写诗", 13, {color: "pink"}),
+        new Tag("OCR", 5),
+        new Tag("视频", 60, {color: "#096"}),
+        new Tag("换脸", 6),
+        new Tag("量子技术", 12, {color: '#660099'}),
+        new Tag("AR/VR", 8, {color: 'red'}),
+//        new Tag("<del>No flash</del>"),
+        new Tag("修复",12),
+        new Tag("数据技术", 35, {
+          color : "blue"
+        }),
+        new Tag("GPT-2/GPT-3模型", 5, {color: "#ff9933"}),
+        new Tag("<img src='@/assets/logo.png'/>")
       ];
       let id = document.getElementById("id");
       console.log(id.offsetWidth);
@@ -43,7 +49,7 @@ export default {
 
 <style scoped>
 #tagCloud1 {
-  padding: 25px;
+  padding: 5px;
 }
 
 #widget {
@@ -57,7 +63,7 @@ export default {
 #widget h4 {
   border-bottom: 1px solid silver;
   color: #999999;
-  font-size: 15px;
+  font-size: 36px;
   margin: 0 0 5px;
   padding-bottom: 5px;
 }
@@ -71,7 +77,7 @@ export default {
 }
 
 .tagCloud {
-  background: transparent url("bg_blue.gif") 0 0 repeat;
+  background: transparent url("../../assets/bg_blue.gif") 0 0 repeat;
 }
 
 .tagCloud ul, .tagCloud li {
@@ -88,7 +94,7 @@ export default {
   color: #fff;
   font-family: Sans;
   font-weight: normal;
-  padding: 3px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;

@@ -66,13 +66,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		ID : "tagCloud",         // String        => Tagcloud id;
 		Class : "tagCloud",      // String        => Tagcloud class;
 		Width : 400,             // Integer       => Tagcloud width in pixels;
-		Heigth : 400,            // Integer       => Tagcloud height in pixels;
+		Height : 400,            // Integer       => Tagcloud height in pixels;
 		Consistent : true,       // Boolean       => Devide tags evenly;
 		Rank : 30,               // Integer 0-100 => Tag importance in procents;
 		Url : "#",               // String URL    => Tag url;
 		OpenInNewWindow: false,  // Boolean       => Open tag url in new window or tab;
-		FontMin : 10,            // Float         => Font size for smallest tag in pixels;
-		FontMax : 24,            // Float         => Font size for biggest tag in pixels;
+		FontMin : 16,            // Float         => Font size for smallest tag in pixels;
+		FontMax : 30,            // Float         => Font size for biggest tag in pixels;
 		Depth : 150,             // Integer       => Perspective depth;
 		AnimationTime : 1,       // Integer       => Animation time and interval, the less it is, the faster the animation is;
 		HoverStop : 15,          // Integer 0-100 => Percent of decrease in animation speed when cursor is removed out of the tagcloud;
@@ -231,7 +231,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		this.position = new Vector();
 		this.size = new Surface({
 				width : parent.size.width || Defaults.Width / 2,
-				height : parent.size.height || Defaults.Heigth / 2
+				height : parent.size.height || Defaults.Height / 2
 			});
 
 		this.element = _doc.createElement("div");
